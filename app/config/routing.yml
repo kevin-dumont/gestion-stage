@@ -1,0 +1,12 @@
+app_default:
+    resource: "@AppBundle/Controller/DefaultController.php"
+    prefix:    /
+    type: annotation
+
+app_stage:
+    resource: "@AppBundle/Controller/StageController.php"
+    prefix:    /stage
+    type: annotation
+
+fos_user:
+    resource: "@FOSUserBundle/Resources/config/routing/all.xml"

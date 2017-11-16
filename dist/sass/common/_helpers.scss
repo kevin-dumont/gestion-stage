@@ -1,0 +1,86 @@
+
+.tac {
+  text-align: center;
+}
+
+.db {
+  display: block;
+}
+
+.dn {
+  display: none;
+}
+
+.df {
+  display: flex;
+}
+
+.dib {
+  display: inline-block;
+}
+
+.fl {
+  float: left;
+}
+
+.fr {
+  float: right;
+}
+
+.por {
+  position: relative;
+}
+
+.poa {
+  position: relative;
+}
+
+.ma {
+  margin-right: auto;
+  margin-left: auto;
+}
+
+$i: 0;
+
+@while $i <= 400 {
+  .mt#{$i} { margin-top: 1px * $i; }
+  .mb#{$i} { margin-bottom: 1px * $i; }
+  .ml#{$i} { margin-left: 1px * $i; }
+  .mr#{$i} { margin-right: 1px * $i; }
+  .pt#{$i} { padding-top: 1px * $i; }
+  .pb#{$i} { padding-bottom: 1px * $i; }
+  .pl#{$i} { padding-left: 1px * $i; }
+  .pr#{$i} { padding-right: 1px * $i; }
+  .w#{$i} { width: 1px * $i; }
+  .h#{$i} { height: 1px * $i; }
+  .m#{$i} { margin: 1px * $i; }
+  .p#{$i} { padding: 1px * $i; }
+
+  // De 100 à 300px, on créer des helpers de 50 en 50
+  @if ($i >= 100) {
+    $i: $i + 50;
+  }
+  // De 50 à 100px, on créer des helpers de 10 en 10
+  @else if ($i >= 50 and $i <= 100) {
+    $i: $i + 10;
+  }
+  // De 10 à 50px, on créer des helpers de 5 en 5
+  @else if ($i >= 10 and $i <= 50) {
+    $i: $i + 5;
+  }
+  // De 0 à 10px, on créer des helpers de 1 en 1
+  @else if ($i <= 10) {
+    $i: $i + 1;
+  }
+}
+
+$i: 1;
+
+@while $i <= 30 {
+
+  .fz#{$i} {
+    font-size: #{$i/10}rem;
+  }
+
+  $i: $i + 1;
+}

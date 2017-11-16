@@ -1,0 +1,52 @@
+.footer {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background: $white;
+  margin-top: 20px;
+  border-top: 1px solid $color4;
+
+  .wrapper {
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .footer-nav {
+      margin: 0;
+      padding: 0;
+      list-style-type: none;
+      overflow: hidden;
+
+      li {
+        float: left;
+        margin-right: 20px;
+        position: relative;
+
+        a {
+          font-weight: 400;
+          display: block;
+          padding: 10px 20px 10px 0;
+        }
+
+        &:last-child {
+          &:after {
+            display: none;
+          }
+        }
+
+        &:after {
+          content: ' ';
+          height: 15px;
+          width: 1px;
+          background: $color3;
+          display: block;
+          position: absolute;
+          top: 10px;
+          right: 0;
+        }
+      }
+    }
+  }
+}

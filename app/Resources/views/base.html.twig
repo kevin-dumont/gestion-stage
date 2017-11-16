@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>{% block title %}Welcome!{% endblock %}</title>
+
+        <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
+        <link rel="stylesheet" href="https://maxcdn.icons8.com/fonts/line-awesome/1.1/css/line-awesome-font-awesome.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css">
+        <link rel="stylesheet" href="{{ asset('assets/css/styles.css') }}">
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+
+        {% block head %}{% endblock %}
+    </head>
+    <body>
+        {% block header %}
+            <div class="header">
+                <div class="container">
+                    <h1>
+                        Plateforme de Gestion des stages
+                    </h1>
+                    <h2>Outil développé par Csatári Rolland et Dumont Kévin</h2>
+
+                    <div class="wrapper-menus">
+                        <nav>
+                            <ul>
+                                <li><a href="#">Stages</a></li>
+                                <li><a href="#">Entreprises</a></li>
+                                <li><a href="#">Suivi scolarité</a></li>
+                            </ul>
+                        </nav>
+
+                        <div class="account">
+                            <i class="fa fa-user fz20"></i>
+                            Bienvenue,
+                            <strong>
+                                Fethi
+                            </strong>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% endblock %}
+
+        <div class="content">
+            <div class="container">
+                <h2>{% block page_title %}{% endblock %}</h2>
+                {% block body %}{% endblock %}
+            </div>
+        </div>
+
+        {% block footer %}
+            <div class="footer">
+                <div class="container">
+                    <div class="wrapper">
+                        <ul class="footer-nav">
+                            <li><a href="#">Mentions légales</a></li>
+                            <li><a href="#">Politique de cookies (miam)</a></li>
+                        </ul>
+                        <div class="copyright">
+                            Lycee Privé Saint-Vincent &copy; 2017
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% endblock %}
+
+        <script src="{{ asset('assets/js/app.js') }}"></script>
+        {% block javascripts %}{% endblock %}
+    </body>
+</html>
