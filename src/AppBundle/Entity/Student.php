@@ -3,6 +3,7 @@
 namespace AppBundle\Entity;
 
 use AppBundle\Traits\UserTrait;
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 use AppBundle\Traits\AddressTrait;
 
@@ -47,6 +48,15 @@ class Student
      */
     private $bacGetting;
 
+    /**
+     * @ORM\ManyToOne(targetEntity="Stage", cascade={"persist"})
+     */
+    private $stage;
+
+    public function __construct()
+    {
+        $this->classRoom = new ArrayCollection();
+    }
 
     /**
      * Get id
@@ -128,6 +138,24 @@ class Student
     public function getBacGetting()
     {
         return $this->bacGetting;
+    }
+
+    /**
+     * @return Stage
+     */
+    public function getStage()
+    {
+        return $this->stage;
+    }
+
+    /**
+     * @param Stage $stage
+     * @return $this
+     */
+    public function setStage(Stage $stage)
+    {
+        $this->stage = $stage;
+        return $this;
     }
 }
 

@@ -41,8 +41,7 @@ class Stage
     private $professionalReferent;
 
     /**
-     * One Stage has One Technologie.
-     * @ORM\OneToOne(targetEntity="Technologie")
+     * @ORM\ManyToMany(targetEntity="Technologie", cascade={"persist"})
      */
     private $technologies;
 
@@ -53,11 +52,9 @@ class Stage
     private $visite;
 
     /**
-     * One Stage has One Promo.
-     * @ORM\OneToOne(targetEntity="Promo")
-     * @ORM\JoinColumn(name="id", referencedColumnName="id")
+     * @ORM\ManyToOne(targetEntity="Student", cascade={"persist"})
      */
-    private $promo;
+    private $student;
 
     /**
      * @var \DateTime
@@ -76,9 +73,11 @@ class Stage
     /**
      * Stage constructor.
      */
-    protected function __construct()
+    public function __construct()
     {
         $this->visite = new ArrayCollection();
+        $this->student = new ArrayCollection();
+        $this->technologies = new ArrayCollection();
     }
 
     /**
@@ -140,7 +139,7 @@ class Stage
     }
 
     /**
-     * @return Technologie
+     * @return ArrayCollection
      */
     public function getTechnologies()
     {
@@ -149,10 +148,12 @@ class Stage
 
     /**
      * @param Technologie $technologies
+     * @return $this
      */
     public function setTechnologies(Technologie $technologies)
     {
-        $this->technologies = $technologies;
+        $this->technologies[] = $technologies;
+        return $this;
     }
 
     /**
@@ -172,19 +173,21 @@ class Stage
     }
 
     /**
-     * @return Promo
+     * @return Student
      */
-    public function getPromo()
+    public function getStudent()
     {
-        return $this->promo;
+        return $this->student;
     }
 
     /**
-     * @param Promo $promo
+     * @param Student $student
+     * @return $this
      */
-    public function setPromo(Promo $promo)
+    public function setStudent(Student $student)
     {
-        $this->promo = $promo;
+        $this->student[] = $student;
+        return $this;
     }
 
     /**

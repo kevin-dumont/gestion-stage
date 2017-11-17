@@ -33,3 +33,7 @@ services:
     # AppBundle\Service\ExampleService:
     #     arguments:
     #         $someArgument: 'some_value'
+
+    app_notifications_service:
+        class: AppBundle\Services\NotificationsService
+        arguments: ['@session']

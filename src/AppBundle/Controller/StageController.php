@@ -2,9 +2,12 @@
 
 namespace AppBundle\Controller;
 
+use AppBundle\Entity\Stage;
+use AppBundle\Form\StageType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+
 
 
 class StageController extends Controller
@@ -27,7 +30,12 @@ class StageController extends Controller
      */
     public function addStage(Request $request)
     {
-        return $this->render('stage/add-edit_stage.html.twig');
+        /**$stage = new Stage();
+        $form = $this->createForm(StageType::class, $stage);
+
+        return $this->render('stage/add-edit_stage.html.twig', [
+            'form' => $form->createView(),
+        ]);*/
     }
 
     /**

@@ -33,7 +33,7 @@ class Company
 
     /**
      * One Stage has One ProfessionalReferent.
-     * @ORM\OneToOne(targetEntity="ProfessionalReferent")
+     * @ORM\ManyToOne(targetEntity="ProfessionalReferent")
      */
     private $professionalReferent;
 
