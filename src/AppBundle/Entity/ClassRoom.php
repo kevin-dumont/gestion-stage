@@ -2,6 +2,7 @@
 
 namespace AppBundle\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -35,6 +36,18 @@ class ClassRoom
      */
     private $designation;
 
+    /**
+     * @ORM\ManyToMany(targetEntity="Promo", cascade={"persist"})
+     */
+    private $promo;
+
+    /**
+     * ClassRoom constructor.
+     */
+    public function __construct()
+    {
+        $this->promo = new ArrayCollection();
+    }
 
     /**
      * Get id
@@ -92,6 +105,24 @@ class ClassRoom
     public function getDesignation()
     {
         return $this->designation;
+    }
+
+    /**
+     * @return ArrayCollection
+     */
+    public function getPromo()
+    {
+        return $this->promo;
+    }
+
+    /**
+     * @param Promo $promo
+     * @return $this
+     */
+    public function setPromo(Promo $promo)
+    {
+        $this->promo[] = $promo;
+        return $this;
     }
 }
 

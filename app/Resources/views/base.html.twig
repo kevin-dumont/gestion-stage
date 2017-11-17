@@ -44,6 +44,19 @@
 
         <div class="content">
             <div class="container">
+
+                {% if app.session.flashBag.has('success') %}
+                        {% for successMsg in app.session.flashbag.get('success') %}
+                            <h2 style="color:green; border:1px solid gray; padding:10px;">{{ successMsg }} !</h2>
+                        {% endfor %}
+                {% endif %}
+
+                {% if app.session.flashBag.has('warning') %}
+                        {% for warningMsg in app.session.flashbag.get('warning') %}
+                            <h2 style="color:red; border:1px solid gray; padding:10px;">{{ warningMsg }} !</h2>
+                        {% endfor %}
+                {% endif %}
+
                 <h2>{% block page_title %}{% endblock %}</h2>
                 {% block body %}{% endblock %}
             </div>

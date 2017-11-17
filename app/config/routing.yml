@@ -8,5 +8,16 @@ app_stage:
     prefix:    /stage
     type: annotation
 
+app_company_type:
+    resource: "@AppBundle/Controller/Company/CompanyTypeController.php"
+    prefix:    /company/type
+    type: annotation
+
+app_company:
+    resource: "@AppBundle/Controller/Company/CompanyController.php"
+    prefix:    /company
+    type: annotation
+
 fos_user:
     resource: "@FOSUserBundle/Resources/config/routing/all.xml"
+

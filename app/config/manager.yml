@@ -1,0 +1,44 @@
+services:
+    app_company_type_manager:
+        class: AppBundle\Manager\CompanyTypeManager
+        arguments: ['@doctrine.orm.entity_manager', '@app_notifications_service']
+
+    app_bacalaureat_manager:
+        class: AppBundle\Manager\BacalaureatManager
+        arguments: ['@doctrine.orm.entity_manager', '@app_notifications_service']
+
+    app_class_room_manager:
+        class: AppBundle\Manager\ClassRoomManager
+        arguments: ['@doctrine.orm.entity_manager', '@app_notifications_service']
+
+    app_company_manager:
+        class: AppBundle\Manager\CompanyManager
+        arguments: ['@doctrine.orm.entity_manager', '@app_notifications_service']
+
+    app_pedagogical_referent_manager:
+        class: AppBundle\Manager\PedagogicalReferentManager
+        arguments: ['@doctrine.orm.entity_manager', '@app_notifications_service']
+
+    app_professional_referent_manager:
+        class: AppBundle\Manager\ProfessionalReferentManager
+        arguments: ['@doctrine.orm.entity_manager', '@app_notifications_service']
+
+    app_promo_manager:
+        class: AppBundle\Manager\PromoManager
+        arguments: ['@doctrine.orm.entity_manager', '@app_notifications_service']
+
+    app_stage_manager:
+        class: AppBundle\Manager\StageManager
+        arguments: ['@doctrine.orm.entity_manager', '@app_notifications_service']
+
+    app_student_manager:
+        class: AppBundle\Manager\StudentManager
+        arguments: ['@doctrine.orm.entity_manager', '@app_notifications_service']
+
+    app_technologie_manager:
+        class: AppBundle\Manager\TechnologieManager
+        arguments: ['@doctrine.orm.entity_manager', '@app_notifications_service']
+
+    app_visite_manager:
+        class: AppBundle\Manager\VisiteManager
+        arguments: ['@doctrine.orm.entity_manager', '@app_notifications_service']

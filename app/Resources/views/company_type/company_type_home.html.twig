@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block page_title %}
+    Liste des types entreprise
+{% endblock %}
+
+{% block body %}
+
+    <a class="add-button" href="{{ path('company_type_add') }}">Ajouter</a>
+
+    <br /><br />
+
+    <table class="company-list-table">
+        <thead>
+            <th>ID</th>
+            <th>Libellé</th>
+            <th>Action</th>
+        </thead>
+        <tbody>
+        {% for element in elements %}
+            <tr>
+                <td>{{ element.id }}</td>
+                <td>{{ element.typeLabel }}</td>
+                <td>
+                    <a href="{{ path('company_type_edit',{ 'id' : element.id }) }}">Modifier</a><br />
+                    <a href="{{ path('company_type_remove',{ 'id' : element.id }) }}">Supprimer</a>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <style>
+        .company-list-table{width:100%;border:1px solid #000;}
+        .company-list-table th, td {text-align: left; border:1px solid #000;}
+        .add-button{border:1px solid #000; padding:5px;}
+    </style>
+
+{% endblock %}
