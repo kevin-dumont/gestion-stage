@@ -18,6 +18,25 @@ app_company:
     prefix:    /company
     type: annotation
 
+app_schooling_baccalaureat:
+    resource: "@AppBundle/Controller/Schooling/BaccalaureatController.php"
+    prefix:    /schooling/baccalaureat
+    type: annotation
+
+app_schooling_classroom:
+    resource: "@AppBundle/Controller/Schooling/ClassRoomController.php"
+    prefix:    /schooling/classroom
+    type: annotation
+
+app_schooling_promo:
+    resource: "@AppBundle/Controller/Schooling/PromoController.php"
+    prefix:    /schooling/promo
+    type: annotation
+
+app_schooling_student:
+    resource: "@AppBundle/Controller/Schooling/StudentController.php"
+    prefix:    /schooling/student
+    type: annotation
+
 fos_user:
     resource: "@FOSUserBundle/Resources/config/routing/all.xml"
-
